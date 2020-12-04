@@ -1,3 +1,4 @@
+import java.util.NoSuchElementException;
 public class Range implements IntegerSequence{
   private int start, end, current;
 
@@ -21,6 +22,19 @@ public class Range implements IntegerSequence{
     }
 
     return true;
+  }
+
+  public int next(){
+    if (hasNext()){
+      int trueCurrent = current;
+
+      current = current + 1;
+
+      return trueCurrent;
+    }
+    else{
+      throw new NoSuchElementException("No more values left in sequence");
+    }
   }
 
 }
