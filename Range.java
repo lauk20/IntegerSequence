@@ -11,4 +11,12 @@ public class Range implements IntegerSequence{
     current = start;
   }
 
+  public boolean hasNext(){
+    if (current > end){
+      return false;
+    }
+
+    return true;
+  }
+
 }
