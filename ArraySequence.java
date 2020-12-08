@@ -10,4 +10,24 @@ public class ArraySequence implements IntegerSequence{
     }
   }
 
+  public boolean hasNext(){
+    if (currentIndex >= data.length){
+      return false;
+    }
+
+    return true;
+  }
+
+  public int next(){
+    if (hasNext()){
+      int trueCurrent = data[currentIndex];
+
+      currentIndex = currentIndex + 1;
+
+      return trueCurrent;
+    }
+    else{
+      throw new NoSuchElementException("No more values left in sequence");
+    }
+  }
 }
