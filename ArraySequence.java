@@ -30,4 +30,12 @@ public class ArraySequence implements IntegerSequence{
       throw new NoSuchElementException("No more values left in sequence");
     }
   }
+
+  public int length(){
+    return data.length;
+  }
+
+  public void reset(){
+    currentIndex = 0;
+  }
 }
